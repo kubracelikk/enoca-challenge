@@ -1,0 +1,44 @@
+<html
+        xmlns:th="http://thymeleaf.org"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Update</title>
+</head>
+<body>
+<form method="post"
+      role="form"
+      th:object="${employee}"
+      th:action="@{/api/employees/update/{employeeId}(employeeId=${employee.id})}">
+
+    <label>
+        first name:
+    </label>
+    <input
+            type="text"
+            name="firstName">
+    <label>
+        last name:
+    </label>
+    <input
+            type="text"
+            name="lastName">
+    <label>
+        email:
+    </label>
+    <input
+            type="text"
+            name="email">
+    <label>
+        company id:
+    </label>
+    <input
+            type="number"
+            name="companyId">
+
+    <button type="submit">
+        Update
+    </button>
+</form>
+</body>
+</html>

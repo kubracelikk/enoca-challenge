@@ -1,0 +1,49 @@
+<html
+        xmlns:th="http://thymeleaf.org"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee List</title>
+</head>
+<body>
+<div th:each="employee :${employee}" class="col-lg-6 mb-2">
+    <label>
+        id:
+    </label>
+    <p th:text="${employee.id}">
+    </p>
+    <label>
+        first name:
+    </label>
+    <p th:text="${employee.firstName}">
+    </p>
+
+    <label>
+        last name:
+    </label>
+    <p th:text="${employee.lastName}">
+    </p>
+    <label>
+        email:
+    </label>
+    <p th:text="${employee.email}">
+    </p>
+    <label>
+        company id:
+    </label>
+    <p th:text="${employee.companyId}">
+    </p>
+    <a th:href="@{/api/employees/update/{employeeId}(employeeId=${employee.id})}">
+        update
+    </a>
+    <a th:href="@{/api/employees/delete/{employeeId}(employeeId=${employee.id})}">
+        delete
+    </a>
+
+
+</div>
+<a th:href="@{/api/employees/add}">
+    employee add
+</a>
+</body>
+</html>

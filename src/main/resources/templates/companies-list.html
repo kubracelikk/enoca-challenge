@@ -1,0 +1,31 @@
+
+<html
+        xmlns:th="http://thymeleaf.org"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Company List</title>
+</head>
+<body>
+    <div th:each="company :${companies}" class="col-lg-6 mb-2">
+        <p th:text="${company.id}">
+        </p>
+        <p th:text="${company.name}">
+
+        </p>
+        <a th:href="@{/api/companies/update/{companyId}(companyId=${company.id})}">
+            update
+        </a>
+        <a th:href="@{/api/companies/delete/{companyId}(companyId=${company.id})}">
+            delete
+        </a>
+
+
+</div>
+    <a th:href="@{/api/companies/add}">
+        company add
+    </a>
+
+</body>
+</html>

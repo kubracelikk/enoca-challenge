@@ -1,0 +1,21 @@
+<html
+        xmlns:th="http://thymeleaf.org"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>Company Add</title>
+</head>
+<body>
+<form method="post"
+      role="form"
+      th:object="${company}"
+      th:action="@{/api/companies/add}">
+  <input
+         type="text"
+         name="name">
+<button type="submit">
+  Add
+</button>
+</form>
+</body>
+</html>
